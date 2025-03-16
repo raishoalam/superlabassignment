@@ -1,0 +1,134 @@
+/* src/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+   
+    transition: box-shadow 0.3s ease-in-out; 
+}
+.nav-logos{
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+.navbar:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar-links a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Added border-radius to the search input */
+    width: 250px;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #3498db; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.6); /* Add shadow on focus */
+}
+
+.search-bar input::placeholder {
+    color: #888;
+}
+
+.search-bar input:hover {
+    border-color: #3498db; /* Change border color on hover */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Mobile & Tablet Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar-links {
+        display: none; /* Hide navbar links initially */
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.active {
+        display: flex; /* Show navbar links when "active" */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu icon */
+    }
+
+    .navbar-links a {
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .search-bar input {
+        width: 200px; /* Smaller search bar on mobile */
+    }
+}
